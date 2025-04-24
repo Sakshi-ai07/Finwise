@@ -1,0 +1,141 @@
+Testing Checklist
+1. Test Case 1: User Logs In and Doesn't Enter Any Data
+Steps:
+
+Log in to the app with valid credentials.
+
+Skip entering any financial details in the Budget Tracking or Goal Planning sections.
+
+Try to generate the PDF or save data to Firestore.
+
+Expected Behavior:
+
+App should show a warning or error message if the user tries to generate a PDF or save data without entering valid information.
+
+Firestore should not save any incomplete data.
+
+The app should ask the user to fill in the required fields.
+
+2. Test Case 2: User Enters Invalid Data (Negative Income or Expenses)
+Steps:
+
+Log in to the app with valid credentials.
+
+Enter a negative value for income or any expense (e.g., rent = -100).
+
+Click "Calculate" in the Budget Tracking section.
+
+Expected Behavior:
+
+App should show an error message such as "Please enter a positive income value" or "Please enter valid expenses".
+
+It should not calculate or store negative values.
+
+3. Test Case 3: User Enters Zero Values
+Steps:
+
+Log in to the app with valid credentials.
+
+Enter zero for all expense categories (e.g., rent, groceries, utilities).
+
+Click "Calculate".
+
+Expected Behavior:
+
+App should calculate savings as the income amount since expenses are zero.
+
+It should display "Savings: [income]" and show a pie chart with all expenses as zero.
+
+4. Test Case 4: User Enters Incomplete Data (Missing Goal Amount or Target Duration)
+Steps:
+
+Log in to the app with valid credentials.
+
+Enter some financial data for the budget.
+
+Enter a goal name but leave the goal amount or target duration empty.
+
+Try to calculate the monthly savings for the goal.
+
+Expected Behavior:
+
+The app should show a warning such as "Please enter valid goal amount and target duration."
+
+Monthly savings should not be calculated until both goal amount and target months are entered.
+
+5. Test Case 5: User Enters Valid Data (Budget, Goal, and All Required Fields)
+Steps:
+
+Log in to the app with valid credentials.
+
+Enter valid data for all fields in the Budget Tracking section.
+
+Enter valid data for the Goal Planning section.
+
+Generate the PDF summary.
+
+Expected Behavior:
+
+The app should successfully calculate savings and display a pie chart.
+
+The app should allow the user to generate and download a PDF containing the summary.
+
+Data should be saved to Firestore.
+
+6. Test Case 6: User Enters Risk Profile and Views Investment Tips
+Steps:
+
+Log in to the app with valid credentials.
+
+Select a risk profile (Low, Medium, or High).
+
+View the investment tips based on the selected risk profile.
+
+Expected Behavior:
+
+The app should display appropriate investment tips for each risk profile (e.g., Low, Medium, High).
+
+No errors should occur when selecting a risk profile.
+
+7. Test Case 7: User Tries to Generate PDF or Save Data Without Entering Goal Details
+Steps:
+
+Log in to the app with valid credentials.
+
+Enter all budget data but leave the Goal Planning section empty.
+
+Try to generate the PDF or save the summary to Firestore.
+
+Expected Behavior:
+
+The app should show a warning like "Please enter a goal" before proceeding.
+
+The PDF generation and Firestore save buttons should be inactive or show an error.
+
+8. Test Case 8: User Logs In Multiple Times and Sees Previous Summaries
+Steps:
+
+Log in to the app with valid credentials.
+
+Fill in the Budget Tracking and Goal Planning sections, then generate a summary.
+
+Log out and log back in with the same credentials.
+
+Expected Behavior:
+
+The app should display the previous financial summaries from Firestore.
+
+It should show the history of previous financial plans, including income, expenses, savings, and goals.
+
+9. Test Case 9: User Encounters Firestore or Network Errors
+Steps:
+
+Simulate a Firestore error (e.g., network error, Firestore query error).
+
+Try saving data to Firestore or retrieving summary data.
+
+Expected Behavior:
+
+The app should handle errors gracefully and show an error message, e.g., "Unable to save data. Please try again later."
+
+It should not crash, and the user should be informed about the issue.

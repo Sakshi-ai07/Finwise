@@ -1,0 +1,69 @@
+Step 1: Project Setup
+
+Name : "FinWise: AI-Powered Personal Finance Planner for Youth"
+
+
+Component | Tech
+Frontend | Streamlit (or React if you want more control)
+Backend | Flask (lightweight, Python-based)
+ML Modeling | scikit-learn, pandas, NumPy
+Database | SQLite or Firebase
+Auth | Firebase Auth / Flask-Login
+Charts/Graphs | Plotly, Matplotlib
+PDF Generation | ReportLab / WeasyPrint
+Deployment | Streamlit Cloud or Render.com
+
+
+**Basic Project Structure **
+finwise_project/
+├── app.py
+├── templates/
+│   └── dashboard.html
+├── static/
+│   └── style.css
+├── models/
+│   └── finance_model.pkl
+├── user_data/
+│   └── data.db
+├── utils/
+│   └── pdf_generator.py
+├── requirements.txt
+└── README.md
+
+_____________________________________________________________
+
+
+✅ Step 1: Setup Firebase Auth with Streamlit
+We’ll use a helpful library: streamlit-firebase-auth
+Let’s get Firebase Auth working with:
+
+✅ Email/password login/signup
+
+✅ Secure session handling
+
+✅ Optionally: Google login (later)
+
+
+
+✅ 1. Create Firebase Project
+Go to Firebase Console
+
+Click “Add project” → Name it: FinWise
+
+Go to Authentication > Sign-in Method
+
+Enable Email/Password
+
+(Optional) Enable Google Sign-In
+
+Go to Project Settings > Web App
+
+Register app → get API keys, authDomain, projectId, etc.
+
+
+streamlit run app.py
+
+
+
+
+
