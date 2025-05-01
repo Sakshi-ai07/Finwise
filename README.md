@@ -25,8 +25,17 @@ FinWise is an easy-to-use, intelligent financial planning web app designed for y
 
 ---
 
-## 🔧 How to Run the Project
-
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Sakshi-ai07/Finwise
+   git clone https://github.com/your-username/FinWise.git
+
+2.**Navigate to the Folder**
+   ```bash
+   cd FinWise
+3.**Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+4.**Run the App**
+   ```bash
+   streamlit run app.py
+
